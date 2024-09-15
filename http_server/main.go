@@ -1,5 +1,5 @@
 /*
-200's :- The code is perfect and it is working
+200's :- The code is perfect, and it is working
 400's :- There is an error
 500's :- Problem with the server
 

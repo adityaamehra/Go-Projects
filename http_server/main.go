@@ -21,9 +21,17 @@ func eventHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 	}
+	if r.Method != "POST" {
+		w.WriteHeader(http.StatusMethodNotAllowed)
+	}
 
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("Welcome to GoFR's event!"))
+	if r.Method == "GET" {
+		w.Write([]byte("Welcome to GoFR's event!"))
+	}
+	if r.Method == "POST" {
+		w.Write([]byte("This is a POST method and it is good"))
+	}
 }
 
 func main() {
@@ -33,6 +41,6 @@ func main() {
 	err := http.ListenAndServe(":8080", nil)
 
 	if err != nil {
-		fmt.Println("Server encounters an error : #{err}\n")
+		fmt.Printf("Server encounters an error : #{err}\n")
 	}
 }

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type rectange struct {
+type rectangle struct {
 	length, breadth int
 }
 
@@ -10,13 +10,15 @@ func calSum(num1, num2 int) int {
 	return num1 + num2
 }
 
-func (r rectange) area() int {
+func (r rectangle) area() int {
 	return r.length * r.breadth
 }
 
 func main() {
-	total := calSum(10, 20)
+	var num1, num2, l, b int
+	fmt.Scanf("%d %d %d %d", &num1, &num2, &l, &b)
+	total := calSum(num1, num2)
 	fmt.Printf("Total : %d\n", total)
-	r := rectange{10, 20}
+	r := rectangle{l, b}
 	fmt.Printf("Area : %d\n", r.area())
 }
